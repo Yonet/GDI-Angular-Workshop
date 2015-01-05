@@ -44,14 +44,14 @@
 			<div class="slides">
 				<section>
 					<h1>AngularJS</h1>
-					<h3>HTML enhanced for web apps!</h3>
+					
 					<p>Aysegul Yonet / <a href="https://twitter.com/tevgende" target="_blank">@AysegulYonet</a>
 					</p>
 				</section>
 
 				<section>
 					<h2>What is Angular?</h2>
-
+					<h3>HTML enhanced for web apps!</h3>
 					<aside class="notes">
 						AngularJS lets you extend HTML vocabulary for your application.
 					</aside>
@@ -68,8 +68,12 @@
 				<section>
 					<h2>Modules</h2>
 					<p>You can think of a module as a container for the different parts of your app – controllers, services, filters, directives, ...</p>
+					<pre><code data-trim contenteditable>
+					var app = angular.module('myApp', []);
+					</code></pre>
 					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
 					<aside class="notes">
+					Modules makes your code, more readable, maintainable and testable. 
 					</aside>
 				</section>
 
@@ -86,10 +90,33 @@
 				<section>
 					<h2>Controllers</h2>
 					<p>Controllers are the 'glue' of an AngularJS application.</p>
+					<pre><code data-trim contenteditable>
+var app = angular.module('myApp', []);
+app.controller("FirstController", function() {
+	//Cool functions goes here...
+});
+					</code></pre>
+					<p><a href="http://jsfiddle.net/yonet3d/50fpkazx/" target="_blank">example</a></p>
+					<aside class="notes">
+					It is important that the name starts with a capital letter, camel case and Ends with Controller
+					</aside>
+				</section>
+				<section>
+					<h2>Filters</h2>
+					<!-- <p>Controllers are the 'glue' of an AngularJS application.</p> -->
 					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
 					<aside class="notes">
 					</aside>
 				</section>
+
+				<section>
+					<h2>Filtering Repeaters</h2>
+					<p></p>
+					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
+					<aside class="notes">
+					</aside>
+				</section>
+
 				<section>
 					<h2><a href="" target="_blank">Exercise time...</a></h2>
 				</section>
@@ -98,20 +125,7 @@
 					<h2><a href="" target="_blank">Solutions</a></h2>
 				</section>
 
-				<section>
-					<h2>Filters</h2>
-					<!-- <p>Controllers are the 'glue' of an AngularJS application.</p> -->
-					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-					<h2>Filtering Repeaters</h2>
-					<p></p>
-					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
-					<aside class="notes">
-					</aside>
-				</section>
+				
 				<section>
 					<h2>Two way data binding.</h2>
 					<p></p>
@@ -266,6 +280,8 @@
 						<li><a href="https://egghead.io/" target="_blank">EggHead.io</a></li>
 						<li><a href="http://www.meetup.com/AngularJS-SF/" target="_blank">Angular Meetup SF</a></li>
 						<li><a href="https://docs.angularjs.org/api" target="_blank">Angular API Docs</a></li>
+						<li><a href="http://www.ng-newsletter.com/" target="_blank">Ng-newsletter</a></li>
+						<li><a href="https://www.youtube.com/user/angularjs" target="_blank">Angular Youtube Channel</a></li>
 					</ul>
 				</section>
 
