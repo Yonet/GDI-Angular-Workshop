@@ -49,19 +49,44 @@
 					</p>
 				</section>
 
-				<section>
-					<h2>What is Angular?</h2>
-					<h3>HTML enhanced for web apps!</h3>
-					<aside class="notes">
-						AngularJS lets you extend HTML vocabulary for your application.
-					</aside>
-				</section>
 				
 
 				<section>
+					<h2>What we will learn today?</h2>
+					<ul>
+						<li>What is AngularJS and why you might want to use it.</li>
+						<li>Parts that makes an Angular application: 
+							<ul>
+								<li>Controllers</li>
+								<li>Directives</li>
+								<li>Services</li>
+							</ul>
+						</li>
+						<li>Routing</li>
+						<li>Debugging your angular app.</li>
+						<li>Animation</li>
+						<li>Resources and open source directives</li>
+					</ul>
+					<aside class="notes">
+					We will look at some build in directives and filters, then we'll create our own.
+					</aside>
+				</section>
+
+				<section>
+					<h2>What is Angular?</h2>
+					<p>AngularJS lets you extend HTML vocabulary for your application.</p>
+					<aside class="notes">
+					If you were to build facebook from skretch, how would you build it? What needs to be different than a static website?
+					</aside>
+				</section>
+
+
+				<section>
 					<h2>Binding</h2>
+					<p>You can bootstrap your angular app by adding ng-app to any html tag.</p>
 					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
 					<aside class="notes">
+					Only one AngularJS application can be auto-bootstrapped per HTML document. The first ngApp found in the document will be used to define the root element to auto-bootstrap as an application. To run multiple applications in an HTML document you must manually bootstrap them using angular.bootstrap instead. AngularJS applications cannot be nested within each other.
 					</aside>
 				</section>
 
@@ -71,7 +96,6 @@
 					<pre><code data-trim contenteditable>
 					var app = angular.module('myApp', []);
 					</code></pre>
-					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
 					<aside class="notes">
 					Modules makes your code, more readable, maintainable and testable. 
 					</aside>
@@ -79,9 +103,10 @@
 
 				<section>
 					<h2>Scopes</h2>
-					<p></p>
-					<!-- <p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p> -->
+					<p>Scope is the glue between application controller and the view.</p>
+					<p><a href="http://plnkr.co/edit/bKBFXKjP2rfYM8RIEZWP?p=preview" target="_blank">example</a></p>
 					<aside class="notes">
+						Scopes are arranged in hierarchical structure which mimic the DOM structure of the application.
 						Scopes provide APIs ($watch) to observe model mutations.
 						($apply) to propagate any model changes through the system into the view from outside of the "Angular realm" (controllers, services, Angular event handlers).
 					</aside>
@@ -89,34 +114,31 @@
 
 				<section>
 					<h2>Controllers</h2>
-					<p>Controllers are the 'glue' of an AngularJS application.</p>
+					<ul>
+						<li>Set up the initial state of the $scope object.</li>
+						<li>Add behavior to the $scope object.</li>
+					</ul>
 					<pre><code data-trim contenteditable>
 var app = angular.module('myApp', []);
-app.controller("FirstController", function() {
+app.controller("FirstController", ['$scope', function($scope) {
+	$scope.message = 'Hello World!';
 	//Cool functions goes here...
 });
 					</code></pre>
-					<p><a href="http://jsfiddle.net/yonet3d/50fpkazx/" target="_blank">example</a></p>
+					<p><a href="http://jsfiddle.net/yonet3d/50fpkazx/1/" target="_blank">example</a></p>
 					<aside class="notes">
-					It is important that the name starts with a capital letter, camel case and Ends with Controller
+					It is important that the name starts with a capital letter, camel case and Ends with Controller.
+					Controllers are view agnostic. Both controllers and directives have reference to the scope, but not to each other.
 					</aside>
 				</section>
 				<section>
 					<h2>Filters</h2>
-					<!-- <p>Controllers are the 'glue' of an AngularJS application.</p> -->
-					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
+					<p>Filters are used for formatting data displayed to the user.</p>
+					<p><a href="http://jsfiddle.net/yonet3d/50fpkazx/2/" target="_blank">example</a></p>
 					<aside class="notes">
 					</aside>
 				</section>
-
-				<section>
-					<h2>Filtering Repeaters</h2>
-					<p></p>
-					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
-					<aside class="notes">
-					</aside>
-				</section>
-
+				<!-- TODO -->
 				<section>
 					<h2><a href="" target="_blank">Exercise time...</a></h2>
 				</section>
@@ -124,23 +146,17 @@ app.controller("FirstController", function() {
 				<section>
 					<h2><a href="" target="_blank">Solutions</a></h2>
 				</section>
-
+				<!-- /TODO -->
 				
-				<section>
+				<!-- <section>
 					<h2>Two way data binding.</h2>
 					<p></p>
 					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
 					<aside class="notes">
 					</aside>
-				</section>
+				</section> -->
 
-				<section>
-					<h2><a href="" target="_blank">Exercise time...</a></h2>
-				</section>
-
-				<section>
-					<h2><a href="" target="_blank">Solutions</a></h2>
-				</section>
+				
 
 				<section>
 					<h2>Injecting Dependencies</h2>
@@ -165,7 +181,8 @@ app.controller("FirstController", function() {
 				<section>
 					<h2><a href="" target="_blank">Solutions</a></h2>
 				</section>
-
+				
+				<!-- /Directives -->
 				<section>
 					<section>
 						<h2>Directives</h2>
@@ -230,16 +247,15 @@ app.controller("FirstController", function() {
 						<aside class="notes">
 						</aside>
 					</section>
+					<section>
+						<h2><a href="" target="_blank">Exercise time...</a></h2>
+					</section>
 
+					<section>
+						<h2><a href="" target="_blank">Solutions</a></h2>
+					</section>
 				</section>
-
-				<section>
-					<h2><a href="" target="_blank">Exercise time...</a></h2>
-				</section>
-
-				<section>
-					<h2><a href="" target="_blank">Solutions</a></h2>
-				</section>
+				<!-- /Directives -->
 
 
 				<section>
@@ -254,6 +270,32 @@ app.controller("FirstController", function() {
 					<h2>REST and custom Services</h2>
 					<p></p>
 					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2><a href="" target="_blank">Exercise time...</a></h2>
+				</section>
+
+				<section>
+					<h2><a href="" target="_blank">Solutions</a></h2>
+				</section>
+
+				<section>
+					<h2>Debugging</h2>
+					<p>Chrome developer tools for AngularJS</p>
+					<ul>
+						<li><a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?hl=en">Angular Batarang</a></li>
+						<li><a href="https://chrome.google.com/webstore/detail/ng-inspector-for-angularj/aadgmnobpdmgmigaicncghmmoeflnamj?hl=en">Ng-inspector</a></li>
+					</ul>
+					<p>On your console:</p>
+					<pre><code data-trim contenteditable>
+//Gives you the last selected element on your html
+var lastElement = angular.element($0);
+//Gives you what is in your scope(functions, variables...)
+lastElement.scope();
+					</code></pre>
 					<aside class="notes">
 					</aside>
 				</section>
@@ -282,6 +324,7 @@ app.controller("FirstController", function() {
 						<li><a href="https://docs.angularjs.org/api" target="_blank">Angular API Docs</a></li>
 						<li><a href="http://www.ng-newsletter.com/" target="_blank">Ng-newsletter</a></li>
 						<li><a href="https://www.youtube.com/user/angularjs" target="_blank">Angular Youtube Channel</a></li>
+						<li><a href="https://github.com/jmcunningham/AngularJS-Learning" target="_blank">AngularJS learning Github Repo</a></li>
 					</ul>
 				</section>
 
