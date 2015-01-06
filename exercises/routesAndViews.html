@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+	<head>
+
+	<script src="angular.js"></script>
+	<script src="angular-route.js"></script>
+	</head>
+	<body ng-app="catApp">
+		<div ng-controller="CatController">
+			<button href="#/feisty" >Feisty</button>
+			<button ng-click='goTo("silly")'>Silly</button>
+			<button ng-click='goTo("cool")'>Cool</button>
+			<button ng-click='goTo("sleepy")'>Sleepy</button>
+			<!-- <img src="http://i.imgur.com/jTGa7.gif" alt="" ng-show="feisty"/>
+			
+			<img src="http://img.pandawhale.com/65323-Deal-with-it-cat-gif-Imgur-GRHo.gif" alt="" ng-show="cool"/>
+			<img src="http://yarr.me/c/735/23/he-s-a-champ.gif" alt="" ng-show="sleepy"/> -->
+			
+		</div>  
+	</body>
+	<script type="text/javascript">
+	var app = angular.module('catApp',['ngRoute'])
+	app.config(['$routeProvider',
+		function($routeProvider) {
+			$routeProvider.
+				when('/fiesty', {
+					templateUrl: 'fiesty.html',
+					controller: 'FiestyController'
+				}).
+				when('/sleepy', {
+					templateUrl: 'sleepy.html',
+					controller: 'SleepyController'
+				}).
+				when('/silly', {
+					templateUrl: 'silly.html',
+					controller: 'SillyController'
+				}).
+				otherwise({
+					redirectTo: '/fiesty'
+				// })
+			});
+		}]);
+	app.controller('CatController',['$scope', '$window', '$location', function($scope, $location){
+		$scope.goTo = function(url) {
+			console.log(url);
+			$window.$location = url;
+
+		}
+		
+	}])
+	app.controller('FiestyController',['$scope', function($scope){
+		$scope.feisty=false;
+		$scope.silly=false;
+		$scope.cool=false;
+		
+	}])
+	app.controller('SleepyController',['$scope', function($scope){
+		$scope.sleepy = false;
+	}])
+	app.controller('SillyController',['$scope', function($scope){
+		$scope.silly=false;
+	}])
+	</script>
+	
+</html>

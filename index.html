@@ -147,29 +147,49 @@ app.controller("FirstController", ['$scope', function($scope) {
 					<h2><a href="" target="_blank">Solutions</a></h2>
 				</section>
 				<!-- /TODO -->
-				
-				<!-- <section>
-					<h2>Two way data binding.</h2>
-					<p></p>
-					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
-					<aside class="notes">
-					</aside>
-				</section> -->
-
-				
 
 				<section>
 					<h2>Injecting Dependencies</h2>
 					<p>Dependency Injection is a software design pattern that deals with how components get hold of their dependencies.</p>
-					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
+					<pre><code data-trim contenteditable>
+
+var app = angular.module('myApp', [
+  'ngRoute',
+  'myControllers'
+]);
+
+					</code></pre>
 					<aside class="notes">
 					</aside>
 				</section>
 
 				<section>
 					<h2>Routing and Views</h2>
-					<p></p>
-					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
+					<pre><code data-trim contenteditable>
+
+app.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/', {
+        templateUrl: 'home.html',
+        controller: 'HomeController'
+      }).
+      when('/users', {
+        templateUrl: 'partials/users.html',
+        controller: 'UserController'
+      }).
+      when('/phones/:phoneId', {
+        templateUrl: 'partials/user-detail.html',
+        controller: 'UserDetailController'
+      }).
+      otherwise({
+        redirectTo: '/home'
+      });
+  }]);
+
+					</code></pre>
+					<!-- TODO -->
+					<p><a href="" target="_blank">example</a></p>
 					<aside class="notes">
 					</aside>
 				</section>
@@ -181,20 +201,20 @@ app.controller("FirstController", ['$scope', function($scope) {
 				<section>
 					<h2><a href="" target="_blank">Solutions</a></h2>
 				</section>
-				
+
 				<!-- /Directives -->
 				<section>
 					<section>
 						<h2>Directives</h2>
 						<p>Directives let you invent new HTML syntax, specific to your application.</p>
-						<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
+						<!-- <p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p> -->
 						<aside class="notes">
 						</aside>
 					</section>
 					
 					<section>
 						<h2>Build in Directives</h2>
-						<p></p>
+						<p>Angular comes with great directives you can use.</p>
 						<p><a href="https://docs.angularjs.org/api/ng/directive" target="_blank">List of build in directives</a></p>
 						<aside class="notes">
 						</aside>
@@ -247,24 +267,52 @@ app.controller("FirstController", ['$scope', function($scope) {
 						<aside class="notes">
 						</aside>
 					</section>
+
 					<section>
-						<h2><a href="" target="_blank">Exercise time...</a></h2>
+						<h2><a href="http://jsfiddle.net/yonet3d/22hgfgLw/" target="_blank">Example</a></h2>
 					</section>
 
 					<section>
-						<h2><a href="" target="_blank">Solutions</a></h2>
+						<h2><a href="http://jsfiddle.net/yonet3d/22hgfgLw/3/" target="_blank">Exercise 1</a></h2>
+						<h2><a href="http://jsfiddle.net/yonet3d/22hgfgLw/4/" target="_blank">Exercise 2</a></h2>
+						<!-- TODO ngif exercise -->
 					</section>
+
+					<section>
+						<h2><a href="http://jsfiddle.net/yonet3d/22hgfgLw/1/" target="_blank">Solution 1</a></h2>
+						<h2><a href="http://jsfiddle.net/yonet3d/22hgfgLw/6/" target="_blank">Solution 2</a></h2>
+						<!-- TODO ngif exercise -->
+					</section>
+
+					
 				</section>
 				<!-- /Directives -->
 
-
+				<!-- Services -->
 				<section>
-					<h2>Services and Factories</h2>
-					<p>The service factory function generates the single object or function that represents the service to the rest of the application.</p>
-					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
-					<aside class="notes">
-					</aside>
+					<section>
+						<h2>Services and Factories</h2>
+						<p>The service factory function generates the single object or function that represents the service to the rest of the application.</p>
+						<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
+						<aside class="notes">
+							You can use services to organize and share code across your app.
+						</aside>
+					</section>
+					<section>
+						<h2>Built-in Services</h2>
+						<ul>
+							<li><a href="https://docs.angularjs.org/api/ng/service/$http" target="_blank">$http</a></li>
+							<li><a href="https://docs.angularjs.org/api/ng/service/$filter" target="_blank">$filter</a></li>
+							<li><a href="https://docs.angularjs.org/api/ng/service/$rootScope" target="_blank">$rootScope</a></li>
+							<li><a href="https://docs.angularjs.org/api/ng/service/$location" target="_blank">$location</a> service parses the URL in the browser address bar and makes the URL available to your application.</li>
+							<li><a href="https://docs.angularjs.org/api/ng/service/$animate" target="_blank">$animate</a> is available in the AngularJS core, however, the ngAnimate module must be included to enable full out animation support. Otherwise, $animate will only perform simple DOM manipulation operations.</li>
+						</ul>
+						<aside class="notes">
+							Like other core Angular identifiers, built-in services always start with $ (e.g. $http).
+						</aside>
+					</section>
 				</section>
+				<!-- /Services -->
 
 				<section>
 					<h2>REST and custom Services</h2>
