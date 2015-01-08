@@ -187,59 +187,7 @@ angular.module('app')
 				</section>
 				<!-- /TODO -->
 
-				<section>
-					<h2>Injecting Dependencies</h2>
-					<p>Dependency Injection is a software design pattern that deals with how components get hold of their dependencies.</p>
-					<pre><code data-trim contenteditable>
 
-var app = angular.module('myApp', [
-  'ngRoute',
-  'myControllers'
-]);
-
-					</code></pre>
-					<aside class="notes">
-					</aside>
-				</section>
-
-				<section>
-					<h2>Routing and Views</h2>
-					<pre><code data-trim contenteditable>
-
-app.config(['$routeProvider',
-  function($routeProvider) {
-    $routeProvider.
-      when('/', {
-        templateUrl: 'home.html',
-        controller: 'HomeController'
-      }).
-      when('/users', {
-        templateUrl: 'partials/users.html',
-        controller: 'UserController'
-      }).
-      when('/phones/:phoneId', {
-        templateUrl: 'partials/user-detail.html',
-        controller: 'UserDetailController'
-      }).
-      otherwise({
-        redirectTo: '/home'
-      });
-  }]);
-
-					</code></pre>
-					<!-- TODO -->
-					<p><a href="" target="_blank">example</a></p>
-					<aside class="notes">
-					</aside>
-				</section>
-
-				<section>
-					<h2><a href="" target="_blank">Exercise time...</a></h2>
-				</section>
-
-				<section>
-					<h2><a href="" target="_blank">Solutions</a></h2>
-				</section>
 
 				<!-- /Directives -->
 				<section>
@@ -383,8 +331,7 @@ $http.post('/someUrl', {msg:'hello word!'}).
 						<h2>Factories</h2>
 						<p>The service factory function generates the single object or function that represents the service to the rest of the application.</p>
 						<pre><code data-trim contenteditable>
-angular.
-module('myServiceModule', []).
+angular.module('myServiceModule', []).
  controller('MyController', ['$scope','notify', function ($scope, notify) {
    $scope.callNotify = function(msg) {
      notify(msg);
@@ -404,16 +351,95 @@ factory('notify', ['$window', function(win) {
 						<aside class="notes">
 						</aside>
 					</section>
-					<section>
-						<!-- TODO -->
-						<h2>Restangular</h2>
+						
+					<!-- TODO -->
+					<!-- <section> -->
+						<!-- <h2>Restangular</h2>
 						<p></p>
 						<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
 						<aside class="notes">
 						</aside>
-					</section>
+					</section> -->
 				</section>
 				<!-- /Services -->
+
+				<section>
+					<h2><a href="" target="_blank">Exercise time...</a></h2>
+				</section>
+
+				<section>
+					<h2><a href="" target="_blank">Solutions</a></h2>
+				</section>
+
+				
+				<section>
+					<h2>Injecting Dependencies</h2>
+					<p>Dependency Injection is a software design pattern that deals with how components get hold of their dependencies.</p>
+					<pre><code data-trim contenteditable>
+
+var app = angular.module('myApp', [
+  'ngRoute',
+  'myControllers'
+]);
+
+					</code></pre>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2><a href="http://angular-ui.github.io/"></a>Angular UI</h2>
+					<p>The companion suite(s) to the AngularJS framework.</p>
+					<ul>
+						<li><a href="http://angular-ui.github.io/bootstrap/">UI-Bootstrap</a></li>
+						<li><a href="http://angular-ui.github.io/ui-router/site/#/api/ui.router">UI-Router</a></li>
+						<li><a href="http://plnkr.co/edit/a3KlK8dKH3wwiiksDSn2?p=preview">UI-Select</a></li>
+						<li><a href="http://angular-ui.github.io/angular-google-maps/#!/">UI-Select</a></li>
+					</ul>
+					<pre><code data-trim contenteditable>
+
+var app = angular.module('myApp', [
+  'ngRoute',
+  'myControllers'
+]);
+
+					</code></pre>
+					<aside class="notes">
+					</aside>
+				</section>
+
+
+				<!-- TODO -->
+
+<!-- 				<section>
+					<h2>Routing and Views</h2>
+					<pre><code data-trim contenteditable>
+
+app.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/', {
+        templateUrl: 'home.html',
+        controller: 'HomeController'
+      }).
+      when('/users', {
+        templateUrl: 'partials/users.html',
+        controller: 'UserController'
+      }).
+      when('/phones/:phoneId', {
+        templateUrl: 'partials/user-detail.html',
+        controller: 'UserDetailController'
+      }).
+      otherwise({
+        redirectTo: '/home'
+      });
+  }]);
+
+					</code></pre>
+					<p><a href="" target="_blank">example</a></p>
+					<aside class="notes">
+					</aside>
+				</section> -->
 
 				<section>
 					<h2><a href="" target="_blank">Exercise time...</a></h2>
