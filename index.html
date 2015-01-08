@@ -270,6 +270,10 @@ angular.module('app')
 						<h2><a href="http://jsfiddle.net/yonet3d/22hgfgLw/6/" target="_blank">Solution 2</a></h2>
 						<!-- TODO ngif exercise -->
 					</section>
+					<!-- TODO -->
+					<section>
+						<h2>Creating Custom Directives</h2>
+					</section>
 
 					
 				</section>
@@ -352,14 +356,6 @@ factory('notify', ['$window', function(win) {
 						</aside>
 					</section>
 						
-					<!-- TODO -->
-					<!-- <section> -->
-						<!-- <h2>Restangular</h2>
-						<p></p>
-						<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
-						<aside class="notes">
-						</aside>
-					</section> -->
 				</section>
 				<!-- /Services -->
 
@@ -378,7 +374,7 @@ factory('notify', ['$window', function(win) {
 					<pre><code data-trim contenteditable>
 
 var app = angular.module('myApp', [
-  'ngRoute',
+  'ui.router',
   'myControllers'
 ]);
 
@@ -400,7 +396,8 @@ var app = angular.module('myApp', [
 
 var app = angular.module('myApp', [
   'ngRoute',
-  'myControllers'
+  'myControllers', 
+  'ui.map'
 ]);
 
 					</code></pre>
