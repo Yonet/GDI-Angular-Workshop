@@ -273,6 +273,40 @@ angular.module('app')
 					<!-- TODO -->
 					<section>
 						<h2>Creating Custom Directives</h2>
+						<p>A linking function is enough to create a directive.</p>
+						<pre><code data-trim contenteditable>
+var app =  angular.module('app', [])
+app.directive('myDirective', [function(){
+	return {
+		link: function() {
+			//Do something here.
+		}
+	}
+}])
+						</code></pre>
+					</section>
+					<section>
+						<!-- <h2>Creating Custom Directives</h2> -->
+						<p>But obviously this is not doing much...</p>
+						<p>Linking function has access to:
+							<ul>
+								<li><i>scope:</i> is an Angular scope object.</li>
+								<li><i>element:</i> is the jqLite-wrapped element that this directive matches.</li>
+								<li><i>attrs:</i> is a hash object with key-value pairs of normalized attribute names and their corresponding attribute values.</li>
+							</ul>
+						</p>
+						<pre><code data-trim contenteditable>
+var app =  angular.module('app', [])
+app.directive('myDirective', [function(){
+	return {
+		restrict: "E", //Defaults to "A" for attribute. 
+		link: function(scope, element, attrs) {
+			//Do something here.
+		}
+	}
+}])
+						</code></pre>
+						<a href="http://jsfiddle.net/yonet3d/2pk4c2eo/1/">Example</a>
 					</section>
 
 					
