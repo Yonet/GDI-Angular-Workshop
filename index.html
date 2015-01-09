@@ -377,9 +377,9 @@ app.directive('superwoman', [function(){
 				<!-- Services -->
 				<section>
 					<section>
-						<h2>Services and Factories</h2>
+						<h2>Services</h2>
 						<p>The service factory function generates the single object or function that represents the service to the rest of the application.</p>
-						<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
+						<p><a href="" target="_blank">example</a></p>
 						<aside class="notes">
 							You can use services to organize and share code across your app.
 						</aside>
@@ -426,7 +426,7 @@ $http.post('/someUrl', {msg:'hello word!'}).
 						</code></pre>
 						<a href="" target="_blank">Example</a>
 					</section>
-					<section>
+<!-- 					<section>
 						<h2>Factories</h2>
 						<p>The service factory function generates the single object or function that represents the service to the rest of the application.</p>
 						<pre><code data-trim contenteditable>
@@ -449,18 +449,19 @@ factory('notify', ['$window', function(win) {
 						</code></pre>
 						<aside class="notes">
 						</aside>
+					</section> -->
+					<section>
+						<h2><a href="" target="_blank">Exercise time...</a></h2>
+					</section>
+
+					<section>
+						<h2><a href="" target="_blank">Solutions</a></h2>
 					</section>
 						
 				</section>
 				<!-- /Services -->
 
-				<section>
-					<h2><a href="" target="_blank">Exercise time...</a></h2>
-				</section>
-
-				<section>
-					<h2><a href="" target="_blank">Solutions</a></h2>
-				</section>
+				
 
 				
 				<section>
@@ -473,8 +474,13 @@ var app = angular.module('myApp', [
   'myControllers'
 ]);
 
+app.controller('MainController', ['$scope', '$http', function($scope, $http){
+	//
+}])
+
 					</code></pre>
 					<aside class="notes">
+					VERY IMPORTANT, order of dependencies matter. $scope is always first. 
 					</aside>
 				</section>
 
@@ -533,13 +539,13 @@ app.config(['$routeProvider',
 					</aside>
 				</section> -->
 
-				<section>
+				<!-- <section>
 					<h2><a href="" target="_blank">Exercise time...</a></h2>
 				</section>
 
 				<section>
 					<h2><a href="" target="_blank">Solutions</a></h2>
-				</section>
+				</section> -->
 
 				<section>
 					<h2>Debugging</h2>
@@ -567,13 +573,13 @@ lastElement.scope();
 					</aside>
 				</section>
 
-				<section>
+<!-- 				<section>
 					<h2><a href="" target="_blank">Exercise time...</a></h2>
 				</section>
 
 				<section>
 					<h2><a href="" target="_blank">Solutions</a></h2>
-				</section>
+				</section> -->
 
 				<section>
 					<h2>More Resources</h2>
