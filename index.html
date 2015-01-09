@@ -47,9 +47,14 @@
 					
 					<p>Aysegul Yonet / <a href="https://twitter.com/tevgende" target="_blank">@AysegulYonet</a>
 					</p>
+					<p>Slides: http://bit.ly/angular-slides</p>
 				</section>
 
-				
+				<section>
+					<h2>What we will build?</h2>
+					<a href="http://yonet.github.io/Catstagram/" target="_blank">Catstagram</a>
+					
+				</section>
 
 				<section>
 					<h2>What we will learn today?</h2>
@@ -71,6 +76,13 @@
 					We will look at some built-in directives and filters, then we'll create our own.
 					</aside>
 				</section>
+
+				<!-- TODO add zip start files with styles-->
+				<section>
+					<h2>What we will start with?</h2>
+					<a href="">Download Files Here</a>
+				</section>
+				
 
 				<section>
 					<h2>What is Angular?</h2>
@@ -178,7 +190,6 @@ angular.module('app')
 					
 				</section>
 				<!-- /Filters -->
-				<!-- TODO -->
 				<section>
 					<h2><a href="http://jsfiddle.net/yonet3d/ngk78pbz/1/" target="_blank">Exercise time...</a></h2>
 				</section>
@@ -186,16 +197,12 @@ angular.module('app')
 				<section>
 					<h2><a href="http://jsfiddle.net/yonet3d/ngk78pbz/" target="_blank">Solutions</a></h2>
 				</section>
-				<!-- /TODO -->
-
-
 
 				<!-- /Directives -->
 				<section>
 					<section>
 						<h2>Directives</h2>
 						<p>Directives let you invent new HTML syntax, specific to your application.</p>
-						<!-- <p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p> -->
 						<aside class="notes">
 						</aside>
 					</section>
@@ -213,6 +220,7 @@ angular.module('app')
 						<p>If jQuery is available, angular.element is an alias for the jQuery function. If jQuery is not available, angular.element delegates to Angular's built-in subset of jQuery, called "jQuery lite" or "jqLite."</p>
 						<p><a href="https://docs.angularjs.org/api/ng/function/angular.element" target="_blank">Angular's jqLite</a></p>
 						<aside class="notes">
+						What I am trying to say is you use angular.element no matter what.
 						</aside>
 					</section>
 
@@ -424,7 +432,12 @@ $http.post('/someUrl', {msg:'hello word!'}).
 	// or server returns response with an error status.
   });
 						</code></pre>
-						<a href="" target="_blank">Example</a>
+						
+					</section>
+					<section>
+						<h2>Custom Services</h2>
+						<p>Services are often used for getter and setter functions</p>
+						<a href="http://jsfiddle.net/yonet3d/16tajygk/10/" target="_blank">Example</a>
 					</section>
 <!-- 					<section>
 						<h2>Factories</h2>

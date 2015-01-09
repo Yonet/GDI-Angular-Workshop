@@ -1,24 +1,24 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Catstagram</title>
-        <link rel="stylesheet" href="styles.css">
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.js"></script>
-        <script src="app.js"></script>
-    </head>
-    <body ng-app='catstagram'>
-        <div ng-controller="CatController">
-            <div>
-                <input ng-model="newCat.title" placeholder="Title"/>
-                <input ng-model="newCat.url" placeholder="Url"/>
-                <p>{{ newCat.title }} {{newCat.url}}</p>
-                <button ng-click="addCat(newCat)">Submit</button>
-            </div>
-            <div ng-repeat="cat in cats">
-                <h1>{{ cat.title }}</h1>
-                <p>{{ cat.likes }} <span ng-click="like($index)">like</span></p>
-                <img src="{{cat.url}}"/>
-            </div>
-        </div>
-    </body>
+	<head>
+		<title>Catstagram</title>
+		<link rel="stylesheet" href="styles.css">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.js"></script>
+		<script src="app.js"></script>
+	</head>
+	<body ng-app='catstagram'>
+		<div ng-controller="CatController">
+			<div>
+				<input ng-model="newCat.title" placeholder="Title"/>
+				<input ng-model="newCat.url" placeholder="Url"/>
+				<p>{{ newCat.title }} {{newCat.url}}</p>
+				<button ng-click="addCat(newCat)">Submit</button>
+			</div>
+			<div ng-repeat="cat in cats">
+				<h1>{{ cat.title }}</h1>
+				<p>{{ cat.likes }} <span ng-click="like($index)">like</span></p>
+				<img src="{{cat.url}}"/>
+			</div>
+		</div>
+	</body>
 </html>
