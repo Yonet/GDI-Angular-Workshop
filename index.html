@@ -286,8 +286,6 @@ app.directive('myDirective', [function(){
 						</code></pre>
 					</section>
 					<section>
-						<!-- <h2>Creating Custom Directives</h2> -->
-						<p>But obviously this is not doing much...</p>
 						<p>Linking function has access to:
 							<ul>
 								<li><i>scope:</i> is an Angular scope object.</li>
@@ -301,12 +299,74 @@ app.directive('myDirective', [function(){
 	return {
 		restrict: "E", //Defaults to "A" for attribute. 
 		link: function(scope, element, attrs) {
-			//Do something here.
+			//Do something here...
 		}
 	}
 }])
 						</code></pre>
-						<a href="http://jsfiddle.net/yonet3d/2pk4c2eo/1/">Example</a>
+						<a href="http://jsfiddle.net/yonet3d/2pk4c2eo/1/" target="_blank">Example</a>
+					</section>
+					<section>
+						<h2>Basic behavior using element</h2>
+						<pre><code data-trim contenteditable>
+
+app.directive('superwoman', [function(){
+	return {
+		restrict: "E",
+		link: function(scope, element, attrs) {
+			element.bind('mouseenter', function(){
+				alert("I'm busy saving the world. Come back later.")
+			})
+		}
+	}
+}])
+						</code></pre>
+						<a href="http://jsfiddle.net/yonet3d/2pk4c2eo/2/" target="_blank">Example</a>
+					</section>
+					<section>
+						<h2>Using attrs</h2>
+						<pre><code data-trim contenteditable>
+
+app.directive('classy', [function(){
+	var link = function(scope, element, attrs) {
+		element.bind('mouseenter', function(){
+			element.addClass(attrs.classy);
+		})
+	}
+	return {
+		restrict:"A",
+		link: link
+	}
+}])
+						</code></pre>
+						<a href="http://jsfiddle.net/yonet3d/2pk4c2eo/6/" target="_blank">Example</a>
+					</section>
+					<section>
+						<h2>Using scope</h2>
+						<pre><code data-trim contenteditable>
+
+app.controller('SuperController', ['$scope', function($scope){
+	$scope.totalSuperwomen = 20;
+	$scope.addOne = function() {
+		$scope.totalSuperwomen ++;
+	}
+}])
+
+app.directive('superwoman', [function(){
+	return {
+		restrict: "E",
+		link: function(scope, element, attrs) {
+			element.bind('mouseenter', function(){
+				scope.addOne();
+				scope.$apply();
+			})
+		}
+	}
+}])
+
+						</code></pre>
+						<a href="http://jsfiddle.net/yonet3d/2pk4c2eo/14/" target="_blank">Example</a>
+						<a href="http://jsfiddle.net/yonet3d/2pk4c2eo/15/" target="_blank">A Better Way</a>
 					</section>
 
 					
@@ -343,24 +403,24 @@ app.directive('myDirective', [function(){
 // Simple GET request example :
 $http.get('/someUrl').
   success(function(data, status, headers, config) {
-    // this callback will be called asynchronously
-    // when the response is available
+	// this callback will be called asynchronously
+	// when the response is available
   }).
   error(function(data, status, headers, config) {
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
+	// called asynchronously if an error occurs
+	// or server returns response with an error status.
 });
 						</code></pre>
 						<pre><code data-trim contenteditable>
 // Simple POST request example (passing data) :
 $http.post('/someUrl', {msg:'hello word!'}).
   success(function(data, status, headers, config) {
-    // this callback will be called asynchronously
-    // when the response is available
+	// this callback will be called asynchronously
+	// when the response is available
   }).
   error(function(data, status, headers, config) {
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
+	// called asynchronously if an error occurs
+	// or server returns response with an error status.
   });
 						</code></pre>
 						<a href="" target="_blank">Example</a>
@@ -372,20 +432,20 @@ $http.post('/someUrl', {msg:'hello word!'}).
 angular.module('myServiceModule', []).
  controller('MyController', ['$scope','notify', function ($scope, notify) {
    $scope.callNotify = function(msg) {
-     notify(msg);
+	 notify(msg);
    };
  }]).
 factory('notify', ['$window', function(win) {
    var msgs = [];
    return function(msg) {
-     msgs.push(msg);
-     if (msgs.length == 3) {
-       win.alert(msgs.join("\n"));
-       msgs = [];
-     }
+	 msgs.push(msg);
+	 if (msgs.length == 3) {
+	   win.alert(msgs.join("\n"));
+	   msgs = [];
+	 }
    };
  }]);
- 						</code></pre>
+						</code></pre>
 						<aside class="notes">
 						</aside>
 					</section>
@@ -448,22 +508,22 @@ var app = angular.module('myApp', [
 
 app.config(['$routeProvider',
   function($routeProvider) {
-    $routeProvider.
-      when('/', {
-        templateUrl: 'home.html',
-        controller: 'HomeController'
-      }).
-      when('/users', {
-        templateUrl: 'partials/users.html',
-        controller: 'UserController'
-      }).
-      when('/phones/:phoneId', {
-        templateUrl: 'partials/user-detail.html',
-        controller: 'UserDetailController'
-      }).
-      otherwise({
-        redirectTo: '/home'
-      });
+	$routeProvider.
+	  when('/', {
+		templateUrl: 'home.html',
+		controller: 'HomeController'
+	  }).
+	  when('/users', {
+		templateUrl: 'partials/users.html',
+		controller: 'UserController'
+	  }).
+	  when('/phones/:phoneId', {
+		templateUrl: 'partials/user-detail.html',
+		controller: 'UserDetailController'
+	  }).
+	  otherwise({
+		redirectTo: '/home'
+	  });
   }]);
 
 					</code></pre>
