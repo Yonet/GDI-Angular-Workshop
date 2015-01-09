@@ -7,7 +7,13 @@
         <script src="app.js"></script>
     </head>
     <body ng-app='catstagram'>
-        <div ng-controller="CatController"> 
+        <div ng-controller="CatController">
+            <div>
+                <input ng-model="newCat.title" placeholder="Title"/>
+                <input ng-model="newCat.url" placeholder="Url"/>
+                <p>{{ newCat.title }} {{newCat.url}}</p>
+                <button ng-click="addCat(newCat)">Submit</button>
+            </div>
             <div ng-repeat="cat in cats">
                 <h1>{{ cat.title }}</h1>
                 <p>{{ cat.likes }} <span ng-click="like($index)">like</span></p>
