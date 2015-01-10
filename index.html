@@ -128,16 +128,7 @@
 					</aside>
 				</section>
 
-				<section>
-					<h2>Scopes</h2>
-					<p>Scope is the glue between application controller and the view.</p>
-					<p><a href="http://plnkr.co/edit/bKBFXKjP2rfYM8RIEZWP?p=preview" target="_blank">example</a></p>
-					<aside class="notes">
-						Scopes are arranged in hierarchical structure which mimic the DOM structure of the application.
-						Scopes provide APIs ($watch) to observe model mutations.
-						($apply) to propagate any model changes through the system into the view from outside of the "Angular realm" (controllers, services, Angular event handlers).
-					</aside>
-				</section>
+				
 
 				<section>
 					<h2>Controllers</h2>
@@ -156,6 +147,17 @@ app.controller("FirstController", ['$scope', function($scope) {
 					<aside class="notes">
 					It is important that the name starts with a capital letter, camel case and Ends with Controller.
 					Controllers are view agnostic. Both controllers and directives have reference to the scope, but not to each other.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Scopes</h2>
+					<p>Scope is the glue between application controller and the view.</p>
+					<p><a href="http://plnkr.co/edit/bKBFXKjP2rfYM8RIEZWP?p=preview" target="_blank">example</a></p>
+					<aside class="notes">
+						Scopes are arranged in hierarchical structure which mimic the DOM structure of the application.
+						Scopes provide APIs ($watch) to observe model mutations.
+						($apply) to propagate any model changes through the system into the view from outside of the "Angular realm" (controllers, services, Angular event handlers).
 					</aside>
 				</section>
 
