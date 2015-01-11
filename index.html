@@ -457,33 +457,13 @@ $http.post('/someUrl', {msg:'hello word!'}).
 					</section>
 					<section>
 						<h2>Custom Services</h2>
-						<p>Services are often used for getter and setter functions</p>
-						<a href="http://jsfiddle.net/yonet3d/16tajygk/10/" target="_blank">Example</a>
-					</section>
-<!-- 					<section>
-						<h2>Factories</h2>
 						<p>The service factory function generates the single object or function that represents the service to the rest of the application.</p>
-						<pre><code data-trim contenteditable>
-angular.module('myServiceModule', []).
- controller('MyController', ['$scope','notify', function ($scope, notify) {
-   $scope.callNotify = function(msg) {
-	 notify(msg);
-   };
- }]).
-factory('notify', ['$window', function(win) {
-   var msgs = [];
-   return function(msg) {
-	 msgs.push(msg);
-	 if (msgs.length == 3) {
-	   win.alert(msgs.join("\n"));
-	   msgs = [];
-	 }
-   };
- }]);
-						</code></pre>
+						<a href="http://jsfiddle.net/yonet3d/16tajygk/10/" target="_blank">Example</a>
 						<aside class="notes">
+							Services are often used for getter and setter functions.
 						</aside>
-					</section> -->
+					</section>
+
 					<section>
 						<h2><a href="exercises/catstagram.zip" target="_blank">Exercise time...</a></h2>
 					</section>
@@ -494,9 +474,6 @@ factory('notify', ['$window', function(win) {
 						
 				</section>
 				<!-- /Services -->
-
-				
-
 				
 				<section>
 					<h2>Injecting Dependencies</h2>
@@ -573,14 +550,6 @@ app.config(['$routeProvider',
 					</aside>
 				</section> -->
 
-				<!-- <section>
-					<h2><a href="" target="_blank">Exercise time...</a></h2>
-				</section>
-
-				<section>
-					<h2><a href="" target="_blank">Solutions</a></h2>
-				</section> -->
-
 				<section>
 					<h2>Debugging</h2>
 					<p>Chrome developer tools for AngularJS</p>
@@ -606,14 +575,6 @@ lastElement.scope();
 					<aside class="notes">
 					</aside>
 				</section>
-
-<!-- 				<section>
-					<h2><a href="" target="_blank">Exercise time...</a></h2>
-				</section>
-
-				<section>
-					<h2><a href="" target="_blank">Solutions</a></h2>
-				</section> -->
 
 				<section>
 					<h2>More Resources</h2>
