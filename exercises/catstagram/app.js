@@ -20,7 +20,7 @@ app.controller('CatController', ['$scope', function($scope){
 	// $scope.addCat = ...
 }]);
 
-// Optional 
+//Optional 
 
 //Create a directive to replace the <span> tag. 
 //Add "liked" class to your element on mouseenter event.

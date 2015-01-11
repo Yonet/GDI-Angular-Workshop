@@ -25,7 +25,7 @@
                 <div class="title">
                     <h1>{{ cat.title }}</h1>
                     <!-- $index refers to the current index in the cats array. cat = cats[$index] -->
-                    <like>{{ cat.likes }} <span ng-click="like($index)">like</span></like>
+                    <p>{{ cat.likes }} <span ng-click="like($index)">like</span></p>
                 </div>
                 <img src="{{cat.url}}"/>
                 <!-- <input ng-model="newComment" placeholder="Comment" class="form-control"/> -->
