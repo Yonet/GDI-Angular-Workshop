@@ -1,16 +1,25 @@
-var app = angular.module('catstagram', []);
-app.controller('CatController', ['$scope', '$http', function($scope, $http){
+//On your terminal cd into your catsagram folder. cd ~/Desktop/catstagram
+//copy and paste python -m SimpleHTTPServer into your terminal
+//Open 
 
-	//Get the cats data using $http from data.json and assign the data to $scope.cats variable
-	$http.get('data.json')
-		.success(function(data, status, headers, config) {
-			$scope.cats = data.cats;
-			console.log('$scope.cats', $scope.cats)
-		});
+//Create an angular app called catstagram
+// var app = ...
 
-	//Write a $scope.like function that takes index as an argument and adds 1 to likes attribute
-	$scope.like = 
+//Create a CatController
+app.controller('CatController', ['$scope', function($scope){
+	//Get the cats data using $http from data.json.
+	//On success function assign the data.cats to $scope.cats variable. 
+	// Don't forget to add $http as your contollers dependecy.
 
-	//Add newCat to the beginning of the $scope.cats array
-	$scope.addCat = 
+	//Write a $scope.like function that takes index as an argument and adds 1 to likes attribute of the cat on $scope.cats[index]. 
+	// $scope.like = ...
+
+	//Create a function that takes a newCat object as argument.
+	// Add likes attribute to the newCat object and assign 1 as the value.
+	// Add newCat to the beginning of the $scope.cats array.
+	// $scope.addCat = ...
 }]);
+
+// Optional 
+
+//Cre

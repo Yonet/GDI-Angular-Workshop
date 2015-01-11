@@ -16,6 +16,7 @@
 			</div>
 			<div ng-repeat="cat in cats">
 				<h1>{{ cat.title }}</h1>
+				<!-- $index refers to the current index in the cats array. cat = cats[$index] -->
 				<p>{{ cat.likes }} <span ng-click="like($index)">like</span></p>
 				<img src="{{cat.url}}"/>
 			</div>
