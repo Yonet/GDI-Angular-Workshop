@@ -10,6 +10,10 @@ app.controller('CatController', ['$scope', function($scope){
 	//Get the cats data using $http from data.json.
 	//On success function assign the data.cats to $scope.cats variable. 
 	// Don't forget to add $http as your contollers dependecy.
+	// $http.get('data.json')
+	// 	.success(function(data){
+		// ...
+	// 	})
 
 	//Write a $scope.like function that takes index as an argument and adds 1 to likes attribute of the cat on $scope.cats[index]. 
 	// $scope.like = ...
