@@ -138,8 +138,8 @@
 				<!-- Scopes -->
 				<section>
 					<h2>Scopes</h2>
-					<p>Scope is the glue between application controller and the view. Everything you need to be available inyour html, you have to include it in your $scope object.</p>
-					<p><a href="http://plnkr.co/edit/bKBFXKjP2rfYM8RIEZWP?p=preview" target="_blank">example</a></p>
+					<p>Scope is the glue between application controller and the view. Everything you need to be available in your html, you have to include it in your $scope object.</p>
+					<p><a href="http://jsfiddle.net/yonet3d/j6mtbzkr/" target="_blank">example</a></p>
 					<aside class="notes">
 						Scopes are arranged in hierarchical structure which mimic the DOM structure of the application.
 						Scopes provide APIs ($watch) to observe model mutations.
@@ -446,7 +446,6 @@ app.directive('superwoman', [function(){
 					</section>
 					<section>
 						<h2>$http</h2>
-						<p>The $http service is a function which takes a single argument — a configuration object — that is used to generate an HTTP request and returns a promise with two $http specific methods: success and error.</p>
 						<pre><code data-trim contenteditable>
 // Simple GET request example :
 $http.get('/someUrl').
@@ -471,7 +470,9 @@ $http.post('/someUrl', {msg:'hello word!'}).
 	// or server returns response with an error status.
   });
 						</code></pre>
-						
+						<aside class="notes">
+						The $http service is a function which takes a single argument — a configuration object — that is used to generate an HTTP request and returns a promise with two $http specific methods: success and error.
+						</aside>
 					</section>
 					<section>
 						<h2>Custom Services</h2>
@@ -589,7 +590,7 @@ lastElement.scope();
 				<section>
 					<h2>Animations</h2>
 					<p>AngularJS 1.3 provides animation hooks for common directives such as ngRepeat, ngSwitch, and ngView, as well as custom directives via the $animate service. </p>
-					<p><a href="http://jsfiddle.net/yonet3d/m62sd5pn/" target="_blank">example</a></p>
+					<p><a href="http://plnkr.co/edit/?p=preview" target="_blank">example</a></p>
 					<aside class="notes">
 					</aside>
 				</section>
